@@ -1,0 +1,306 @@
+
+Task 2 — Join + scalar subquery in SELECT
+
+Problem: Show each sale with category and a column showing category’s average unit_price.
+
+SELECT
+
+ s.sale_id, s.store, p.product_name, p.category, p.unit_price,
+
+ (SELECT AVG(unit_price) FROM products x WHERE x.category = p.category) AS category_avg_price
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+ORDER BY s.sale_id;
+
+
+
+Task 3 — Join + subquery on date slice
+
+Problem: For sales from '2025-01-06' onwards, show product and net amount.
+
+SELECT
+
+ s.sale_id, s.sale_date, s.store, p.product_name,
+
+ (s.qty * p.unit_price * (1 - s.discount_pct)) AS net_amount
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+WHERE s.sale_date >= (
+
+ SELECT MIN(sale_date) FROM sales WHERE sale_date >= '2025-01-06'
+
+)
+
+ORDER BY s.sale_date, s.sale_id;
+
+
+
+Task 4 — Join + EXISTS (price threshold)
+
+Problem: Show sales where the joined product has any peer in the same category priced above 3000.
+
+SELECT s.sale_id, p.product_name, p.category, p.unit_price
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+WHERE EXISTS (
+
+ SELECT 1
+
+ FROM products p2
+
+ WHERE p2.category = p.category
+
+   AND p2.unit_price > 3000
+
+)
+
+ORDER BY s.sale_id;
+
+
+
+Task 5 — Join + correlated subquery (per-store above-average net)
+
+Problem: Return sales whose net_amount is > average net_amount of that store.
+
+SELECT
+
+ s.sale_id, s.store, p.product_name,
+
+ (s.qty * p.unit_price * (1 - s.discount_pct)) AS net_amount
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+WHERE (s.qty * p.unit_price * (1 - s.discount_pct)) > (
+
+ SELECT AVG(s2.qty * p2.unit_price * (1 - s2.discount_pct))
+
+ FROM sales s2
+
+ JOIN products p2 ON p2.product_id = s2.product_id
+
+ WHERE s2.store = s.store
+
+)
+
+ORDER BY s.store, net_amount DESC;
+
+
+
+Task 6 — Join + IN (category from subselect)
+
+Problem: Show sales for categories that start with 'S' (e.g., Stationery) using a subquery on products.
+
+SELECT s.sale_id, s.store, p.product_name, p.category
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+WHERE p.category IN (
+
+ SELECT DISTINCT category FROM products WHERE category LIKE 'S%'
+
+)
+
+ORDER BY s.sale_id;
+
+
+
+Task 7 — Join + subquery in FROM (inline view)
+
+Problem: Build an inline subquery that computes per-product max unit_price per category, then join to show which products are category-max.
+
+SELECT p.category, p.product_name, p.unit_price, m.max_price_in_category
+
+FROM products p
+
+JOIN (
+
+ SELECT category, MAX(unit_price) AS max_price_in_category
+
+ FROM products
+
+ GROUP BY category
+
+) m ON m.category = p.category AND p.unit_price = m.max_price_in_category
+
+ORDER BY p.category, p.product_name;
+
+
+
+Task 8 — Join + HAVING with subquery threshold
+
+Problem: For each store, compute revenue and keep only those stores whose revenue is ≥ the overall average revenue per store.
+
+SELECT
+
+ s.store,
+
+ SUM(s.qty * p.unit_price * (1 - s.discount_pct)) AS revenue
+
+FROM sales s
+
+JOIN products p ON p.product_id = s.product_id
+
+GROUP BY s.store
+
+HAVING SUM(s.qty * p.unit_price * (1 - s.discount_pct)) >= (
+
+ SELECT AVG(store_rev)
+
+ FROM (
+
+   SELECT
+
+     store,
+
+     SUM(qty * p2.unit_price * (1 - discount_pct)) AS store_rev
+
+   FROM sales
+
+   JOIN products p2 ON p2.product_id = sales.product_id
+
+   GROUP BY store
+
+ ) t
+
+)
+
+ORDER BY revenue DESC, s.store;
+
+
+
+Task 9 — Join + anti-semi using NOT EXISTS
+
+Problem: List stores that never sold products in category 'Bags'.
+
+SELECT DISTINCT s.store
+
+FROM sales s
+
+WHERE NOT EXISTS (
+
+ SELECT 1
+
+ FROM sales s2
+
+ JOIN products p2 ON p2.product_id = s2.product_id
+
+ WHERE s2.store = s.store
+
+   AND p2.category = 'Bags'
+
+)
+
+ORDER BY s.store;
+
+
+
+Task 10 — Join + EXISTS for “has repeat buyer day”
+
+Problem: Return sales rows for which the same store had another sale on the same date (besides itself).
+
+SELECT s.*
+
+FROM sales s
+
+WHERE EXISTS (
+
+ SELECT 1
+
+ FROM sales x
+
+ WHERE x.store = s.store
+
+   AND x.sale_date = s.sale_date
+
+   AND x.sale_id <> s.sale_id
+
+)
+
+ORDER BY s.store, s.sale_date, s.sale_id;
+
+
+
+Task 11 — Join + subquery using ANY/ALL
+
+Problem: Show products whose price is ≥ ALL prices of products in category 'Accessories'.
+
+SELECT *
+
+FROM products p
+
+WHERE p.unit_price >= ALL (
+
+ SELECT unit_price FROM products WHERE category = 'Accessories'
+
+)
+
+ORDER BY p.unit_price DESC, p.product_id;
+
+
+
+Task 12 — Join + subquery to filter “top revenue product per store”
+
+Problem: For each store, return the product(s) with the maximum total revenue (sum of net_amount across that store). Use a subquery to compute store-product revenue, then join back to filter maxima.
+
+-- Inline subquery computes revenue per (store, product_id)
+
+WITH store_prod AS (
+
+ SELECT
+
+   s.store,
+
+   s.product_id,
+
+   SUM(s.qty * p.unit_price * (1 - s.discount_pct)) AS revenue
+
+ FROM sales s
+
+ JOIN products p ON p.product_id = s.product_id
+
+ GROUP BY s.store, s.product_id
+
+),
+
+max_rev AS (
+
+ SELECT sp.store, MAX(sp.revenue) AS max_revenue
+
+ FROM store_prod sp
+
+ GROUP BY sp.store
+
+)
+
+SELECT
+
+ sp.store,
+
+ pr.product_name,
+
+ sp.revenue
+
+FROM store_prod sp
+
+JOIN max_rev mr
+
+ ON mr.store = sp.store AND mr.max_revenue = sp.revenue
+
+JOIN products pr
+
+ ON pr.product_id = sp.product_id
+
+ORDER BY sp.store, sp.revenue DESC, pr.product_name;
