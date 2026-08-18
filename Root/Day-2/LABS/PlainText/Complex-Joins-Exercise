@@ -1,0 +1,70 @@
+Objective: Practice complex join operations in SQL.
+
+
+
+Create the tables orders, customers, and products:
+
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    city VARCHAR(50)
+);
+
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    price DECIMAL(10, 2)
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    product_id INT,
+    order_date DATE,
+    quantity INT,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+
+Insert sample data into the tables.
+
+
+
+INSERT INTO customers VALUES
+(1, 'Alice', 'New York'),
+(2, 'Bob', 'Chicago'),
+(3, 'Charlie', 'San Francisco');
+
+INSERT INTO products VALUES
+(1, 'Laptop', 1000.00),
+(2, 'Tablet', 500.00),
+(3, 'Smartphone', 800.00);
+
+INSERT INTO orders VALUES
+(1, 1, 1, '2023-01-01', 2),
+(2, 2, 2, '2023-02-15', 1),
+(3, 3, 3, '2023-03-10', 3);
+
+
+Write a query using an INNER JOIN to fetch all orders with customer and product details.
+
+
+
+SELECT o.order_id, c.name AS customer_name, p.product_name, o.quantity, o.order_date
+FROM orders o
+INNER JOIN customers c ON o.customer_id = c.customer_id
+INNER JOIN products p ON o.product_id = p.product_id;
+
+
+Tasks to be Completed:
+
+
+
+Use a LEFT JOIN to fetch all customers and their orders, including those without orders.
+Write a query with a FULL OUTER JOIN to combine all customer and product data.
+Use aliases to simplify the query syntax.
+Write a query to find customers who have never placed an order.
+Write a query using a self-join to identify duplicate orders (if any).
+Combine GROUP BY with JOIN to calculate total revenue per customer.
+Write a query using HAVING to filter customers with orders exceeding $2500.
