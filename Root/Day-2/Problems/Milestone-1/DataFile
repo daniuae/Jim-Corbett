@@ -1,3 +1,4 @@
+
 -- ==========================================
 -- HOSPITAL MANAGEMENT DATABASE
 -- ALL TABLES + DATA IN ONE SCRIPT
@@ -35,6 +36,568 @@ INSERT INTO patients VALUES
 'Female'
 ,28,
 'Bangalore'),
+(3,
+'Arun'
+,
+'Male'
+,45,
+'Hyderabad'),
+(4,
+'Sneha'
+,
+'Female'
+,31,
+'Mumbai'),
+(5,
+'Kiran'
+,
+'Male'
+,50,
+'Delhi'),
+(6,
+'Ramesh Kumar'
+,
+'Male'
+,42,
+'Chennai'),
+(7,
+'Lakshmi Devi'
+,
+'Female'
+,36,
+'Coimbatore'),
+(8,
+'Suresh Babu'
+,
+'Male'
+,29,
+'Madurai'),
+(9,
+'Anitha Rao'
+,
+'Female'
+,55,
+'Bangalore'),
+(10,
+'Vijay Sharma'
+,
+'Male'
+,61,
+'Mumbai'),
+(11,
+'Deepa Nair'
+,
+'Female'
+,48,
+'Kochi'),
+(12,
+'Karthik Raj'
+,
+'Male'
+,34,
+'Chennai'),
+(13,
+'Meena Patel'
+,
+'Female'
+,40,
+'Ahmedabad'),
+(14,
+'Rohit Singh'
+,
+'Male'
+,27,
+'Delhi'),
+(15,
+'Pooja Gupta'
+,
+'Female'
+,31,
+'Hyderabad'),
+(16,
+'Naveen Kumar'
+,
+'Male'
+,45,
+'Pune'),
+(17,
+'Shalini Verma'
+,
+'Female'
+,52,
+'Lucknow'),
+(18,
+'Ajay Das'
+,
+'Male'
+,38,
+'Kolkata'),
+(19,
+'Neha Reddy'
+,
+'Female'
+,24,
+'Hyderabad'),
+(20,
+'Manoj Jain'
+,
+'Male'
+,58,
+'Jaipur');
+-- ==========================================LTMB12-SQL Practice - Set1
+-- DOCTORS
+-- ==========================================
+CREATE TABLE doctors (
+doctor
+_
+id INT PRIMARY KEY,
+doctor
+_
+name VARCHAR(100),
+specialization VARCHAR(50),
+consultation
+_
+fee DECIMAL(10,2)
+);
+INSERT INTO doctors VALUES
+(101,
+'Dr. Kumar'
+,
+'Cardiology'
+,1000),
+(102,
+'Dr. Mehta'
+,
+'Neurology'
+,1500),
+(103,
+'Dr. Sharma'
+,
+'Orthopedics'
+,1200),
+(104,
+'Dr. Reddy'
+,
+'Dermatology'
+,800),
+(105,
+'Dr. Anjali Iyer'
+,
+'Pediatrics'
+,900),
+(106,
+'Dr. Rajesh Gupta'
+,
+'ENT'
+,850),
+(107,
+'Dr. Vivek Menon'
+,
+'General Medicine'
+,700),
+(108,
+'Dr. Sunita Shah'
+,
+'Gynecology'
+,1300),
+(109,
+'Dr. Akash Verma'
+,
+'Cardiology'
+,1200),
+(110,
+'Dr. Harish Rao'
+,
+'Neurology'
+,1800),
+(111,
+'Dr. Kavitha Devi'
+,
+'Orthopedics'
+,1400),
+(112,
+'Dr. Prakash Nair'
+,
+'Pulmonology'
+,1100);
+-- ==========================================
+-- APPOINTMENTS
+-- ==========================================
+CREATE TABLE appointments (
+appointment
+_
+id INT PRIMARY KEY,
+patient
+_
+id INT,
+doctor
+_
+id INT,
+appointment
+_
+date DATE,
+status VARCHAR(20),
+FOREIGN KEY(patient
+_
+id)
+REFERENCES patients(patient
+_
+id),
+FOREIGN KEY(doctor
+_
+id)
+REFERENCES doctors(doctor
+_
+id)
+);LTMB12-SQL Practice - Set1
+INSERT INTO appointments VALUES
+(1001,1,101,
+'2025-05-01'
+,
+'Completed'),
+(1002,2,102,
+'2025-05-03'
+,
+'Completed'),
+(1003,3,101,
+'2025-05-05'
+,
+'Pending'),
+(1004,4,103,
+'2025-05-06'
+,
+'Completed'),
+(1005,5,104,
+'2025-05-08'
+,
+'Cancelled'),
+(1006,6,105,
+'2025-05-10'
+,
+'Completed'),
+(1007,7,106,
+'2025-05-11'
+,
+'Completed'),
+(1008,8,107,
+'2025-05-11'
+,
+'Completed'),
+(1009,9,108,
+'2025-05-12'
+,
+'Pending'),
+(1010,10,109,
+'2025-05-12'
+,
+'Completed'),
+(1011,11,110,
+'2025-05-13'
+,
+'Completed'),
+(1012,12,111,
+'2025-05-13'
+,
+'Completed'),
+(1013,13,112,
+'2025-05-14'
+,
+'Cancelled'),
+(1014,14,105,
+'2025-05-14'
+,
+'Completed'),
+(1015,15,106,
+'2025-05-15'
+,
+'Completed'),
+(1016,16,107,
+'2025-05-16'
+,
+'Pending'),
+(1017,17,108,
+'2025-05-17'
+,
+'Completed'),
+(1018,18,109,
+'2025-05-17'
+,
+'Completed'),
+(1019,19,110,
+'2025-05-18'
+,
+'Completed'),
+(1020,20,111,
+'2025-05-18'
+,
+'Pending'),
+(1021,1,112,
+'2025-05-19'
+,
+'Completed'),
+(1022,2,105,
+'2025-05-20'
+,
+'Completed'),
+(1023,3,106,
+'2025-05-20'
+,
+'Completed'),
+(1024,4,107,
+'2025-05-21'
+,
+'Completed'),
+(1025,5,108,
+'2025-05-21'
+,
+'Cancelled');
+-- ==========================================
+-- BILLING
+-- ==========================================
+CREATE TABLE billing (
+bill
+_
+id INT PRIMARY KEY,
+appointment
+_
+id INT,
+bill
+_
+amount DECIMAL(10,2),
+payment
+_
+status VARCHAR(20),
+FOREIGN KEY(appointment
+_
+id)
+REFERENCES appointments(appointment
+_
+id)
+);LTMB12-SQL Practice - Set1
+INSERT INTO billing VALUES
+(1,1001,1000,
+'Paid'),
+(2,1002,1500,
+'Paid'),
+(3,1003,1000,
+'Pending'),
+(4,1004,1200,
+'Paid'),
+(5,1005,0,
+'Cancelled'),
+(6,1006,900,
+'Paid'),
+(7,1007,850,
+'Paid'),
+(8,1008,700,
+'Paid'),
+(9,1009,1300,
+'Pending'),
+(10,1010,1200,
+'Paid'),
+(11,1011,1800,
+'Paid'),
+(12,1012,1400,
+'Paid'),
+(13,1013,0,
+'Cancelled'),
+(14,1014,900,
+'Paid'),
+(15,1015,850,
+'Paid'),
+(16,1016,700,
+'Pending'),
+(17,1017,1300,
+'Paid'),
+(18,1018,1200,
+'Paid'),
+(19,1019,1800,
+'Paid'),
+(20,1020,1400,
+'Pending'),
+(21,1021,1100,
+'Paid'),
+(22,1022,900,
+'Paid'),
+(23,1023,850,
+'Paid'),
+(24,1024,700,
+'Paid'),
+(25,1025,0,
+'Cancelled');
+-- ==========================================
+-- TREATMENTS
+-- ==========================================
+CREATE TABLE treatments (
+treatment
+_
+id INT PRIMARY KEY,
+appointment
+_
+id INT,
+treatment
+_
+name VARCHAR(100),
+treatment
+_
+cost DECIMAL(10,2),
+FOREIGN KEY(appointment
+_
+id)
+REFERENCES appointments(appointment
+_
+id)
+);
+INSERT INTO treatments VALUES
+(1,1001,
+'ECG'
+,500),
+(2,1002,
+'Brain Scan'
+,2500),LTMB12-SQL Practice - Set1
+(3,1004,
+'Knee X-Ray'
+,1200),
+(4,1006,
+'Vaccination'
+,300),
+(5,1007,
+'Ear Cleaning'
+,400),
+(6,1008,
+'General Checkup'
+,250),
+(7,1010,
+'ECG'
+,500),
+(8,1011,
+'MRI Scan'
+,3500),
+(9,1012,
+'Bone Scan'
+,1800),
+(10,1014,
+'Vaccination'
+,300),
+(11,1015,
+'ENT Checkup'
+,500),
+(12,1017,
+'Pregnancy Scan'
+,2200),
+(13,1018,
+'Stress Test'
+,900),
+(14,1019,
+'Neurology Test'
+,4000),
+(15,1021,
+'Pulmonary Function Test'
+,1600);
+-- ==========================================
+-- MEDICINES
+-- ==========================================
+CREATE TABLE medicines (
+medicine
+_
+id INT PRIMARY KEY,
+medicine
+_
+name VARCHAR(100),
+medicine
+_price DECIMAL(10,2)
+);
+INSERT INTO medicines VALUES
+(1,
+'Paracetamol'
+,20),
+(2,
+'Amoxicillin'
+,120),
+(3,
+'Aspirin'
+,50),
+(4,
+'Metformin'
+,180),
+(5,
+'Atorvastatin'
+,250),
+(6,
+'Omeprazole'
+,90),
+(7,
+'Cetirizine'
+,40),
+(8,
+'Vitamin D'
+,150);
+-- ==========================================
+-- PRESCRIPTIONS
+-- ==========================================
+CREATE TABLE prescriptions (
+prescription
+_
+id INT PRIMARY KEY,
+appointment
+_
+id INT,
+medicine
+_
+id INT,
+quantity INT,LTMB12-SQL Practice - Set1
+FOREIGN KEY(appointment
+_
+id)
+REFERENCES appointments(appointment
+_
+id),
+FOREIGN KEY(medicine
+_
+id)
+REFERENCES medicines(medicine
+_
+id)
+);
+INSERT INTO prescriptions VALUES
+(1,1001,1,10),
+(2,1001,3,5),
+(3,1002,2,7),
+(4,1004,5,15),
+(5,1006,7,10),
+(6,1007,6,5),
+(7,1008,1,10),
+(8,1010,4,20),
+(9,1011,5,30),
+(10,1012,3,15),
+(11,1014,8,10),
+(12,1015,7,5),
+(13,1017,2,10),
+(14,1018,1,20),
+(15,1019,5,15);
+-- ==========================================
+-- APPOINTMENT AUDIT
+-- ==========================================
+CREATE TABLE appointment
+_
+audit (
+audit
+_
+id INT AUTO
+_
+INCREMENT PRIMARY KEY,
+appointment
+_
+id INT,
+action
+_
+type VARCHAR(50),
+action
+_
+time TIMESTAMP DEFAULT CURRENT
+_
+TIMESTAMP
+);'Bangalore'),
 (3,
 'Arun'
 ,
