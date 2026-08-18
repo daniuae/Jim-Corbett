@@ -1,0 +1,56 @@
+Objective: Use subqueries for data analysis.
+
+
+
+Create the employees and salaries tables:
+
+
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50)
+);
+
+CREATE TABLE salaries (
+    employee_id INT,
+    salary DECIMAL(10, 2),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+Insert sample data into the tables.
+
+
+
+sql
+Copy code
+INSERT INTO employees VALUES
+(1, 'Alice', 'HR'),
+(2, 'Bob', 'Engineering'),
+(3, 'Charlie', 'Finance');
+
+INSERT INTO salaries VALUES
+(1, 50000.00),
+(2, 70000.00),
+(3, 60000.00);
+
+
+Write a query to fetch employees with a salary higher than the average salary.
+
+
+
+SELECT name, department
+FROM employees
+WHERE employee_id IN (
+    SELECT employee_id
+    FROM salaries
+    WHERE salary > (SELECT AVG(salary) FROM salaries)
+);
+
+
+Use a correlated subquery to fetch employees with the highest salary in their department.
+Write a subquery to calculate the total salary paid to employees in each department.
+Create a query to find employees who earn less than their departmental average.
+Combine subqueries with JOIN to fetch detailed employee salary data.
+Write a query to find employees whose salary is in the top 10% of all salaries.
+Use a subquery in the SELECT clause to calculate each employee’s rank.
+Write a query using a subquery to identify duplicate entries in the salaries table.
