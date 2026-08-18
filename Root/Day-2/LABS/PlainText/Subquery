@@ -1,99 +1,56 @@
-Objective: Practice complex join operations in SQL.
+Objective: Use subqueries for data analysis.
 
-Summary: This lab introduces learners to advanced SQL joins, including INNER JOIN, LEFT JOIN, and FULL OUTER JOIN. Learners will practice retrieving and combining data from multiple related tables.
 
-Create the tables orders, customers, and products:
 
-CREATE TABLE customers (
-    customer_id INT PRIMARY KEY,
+Create the employees and salaries tables:
+
+
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
     name VARCHAR(50),
-    city VARCHAR(50)
+    department VARCHAR(50)
 );
 
-CREATE TABLE products (
-    product_id INT PRIMARY KEY,
-    product_name VARCHAR(50),
-    price DECIMAL(10, 2)
+CREATE TABLE salaries (
+    employee_id INT,
+    salary DECIMAL(10, 2),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+Insert sample data into the tables.
+
+
+
+sql
+Copy code
+INSERT INTO employees VALUES
+(1, 'Alice', 'HR'),
+(2, 'Bob', 'Engineering'),
+(3, 'Charlie', 'Finance');
+
+INSERT INTO salaries VALUES
+(1, 50000.00),
+(2, 70000.00),
+(3, 60000.00);
+
+
+Write a query to fetch employees with a salary higher than the average salary.
+
+
+
+SELECT name, department
+FROM employees
+WHERE employee_id IN (
+    SELECT employee_id
+    FROM salaries
+    WHERE salary > (SELECT AVG(salary) FROM salaries)
 );
 
-CREATE TABLE orders (
-    order_id INT PRIMARY KEY,
-    customer_id INT,
-    product_id INT,
-    order_date DATE,
-    quantity INT,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
-);
 
-
-Insert sample data into the tables:
-
-INSERT INTO customers VALUES
-(1, 'Alice', 'New York'),
-(2, 'Bob', 'Chicago'),
-(3, 'Charlie', 'San Francisco');
-
-INSERT INTO products VALUES
-(1, 'Laptop', 1000.00),
-(2, 'Tablet', 500.00),
-(3, 'Smartphone', 800.00);
-
-INSERT INTO orders VALUES
-(1, 1, 1, '2023-01-01', 2),
-(2, 2, 2, '2023-02-15', 1),
-(3, 3, 3, '2023-03-10', 3);
-
-
-Write a query using an INNER JOIN to fetch all orders with customer and product details:
-
-SELECT o.order_id, c.name AS customer_name, p.product_name, o.quantity, o.order_date
-FROM orders o
-INNER JOIN customers c ON o.customer_id = c.customer_id
-INNER JOIN products p ON o.product_id = p.product_id;
-
-
-Use a LEFT JOIN to fetch all customers and their orders, including those without orders:
-
-SELECT c.name AS customer_name, o.order_id, o.quantity
-FROM customers c
-LEFT JOIN orders o ON c.customer_id = o.customer_id;
-
-
-Write a query with a FULL OUTER JOIN to combine all customer and product data (simulate if not supported):
-
-SELECT c.name AS customer_name, p.product_name
-FROM customers c
-FULL OUTER JOIN products p ON c.customer_id = p.product_id;
-
-
-Use aliases to simplify the query syntax:
-
-SELECT o.order_id, cu.name, pr.product_name
-FROM orders o
-INNER JOIN customers cu ON o.customer_id = cu.customer_id
-INNER JOIN products pr ON o.product_id = pr.product_id;
-
-
-Write a query to find customers who have never placed an order:
-
-SELECT c.name
-FROM customers c
-LEFT JOIN orders o ON c.customer_id = o.customer_id
-WHERE o.order_id IS NULL;
-
-
-Write a query using a self-join to identify duplicate orders (if any):
-
-SELECT o1.order_id, o2.order_id
-FROM orders o1
-INNER JOIN orders o2 ON o1.customer_id = o2.customer_id AND o1.order_id != o2.order_id;
-
-
-Combine GROUP BY with JOIN to calculate total revenue per customer:
-
-SELECT c.name AS customer_name, SUM(o.quantity * p.price) AS total_revenue
-FROM customers c
-INNER JOIN orders o ON c.customer_id = o.customer_id
-INNER JOIN products p ON o.product_id = p.product_id
-GROUP BY c.name;
+Use a correlated subquery to fetch employees with the highest salary in their department.
+Write a subquery to calculate the total salary paid to employees in each department.
+Create a query to find employees who earn less than their departmental average.
+Combine subqueries with JOIN to fetch detailed employee salary data.
+Write a query to find employees whose salary is in the top 10% of all salaries.
+Use a subquery in the SELECT clause to calculate each employee’s rank.
+Write a query using a subquery to identify duplicate entries in the salaries table.
