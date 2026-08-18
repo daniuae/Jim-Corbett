@@ -1,0 +1,231 @@
+Hands On Lab — Subqueries & Nested Queries (12 Tasks)
+
+
+
+Assumed Tables
+
+-- products(product_id, product_name, category, unit_price)
+
+-- sales(sale_id, product_id, qty, discount_pct, sale_date, store)
+
+
+
+Note: Use only subqueries/nesting here (no JOIN in SELECT list unless specified). MySQL 5.7/8.0 safe. Dates as 'YYYY-MM-DD'.
+
+
+
+Task 1 — Scalar subquery in WHERE
+
+Problem: Return sales whose qty is strictly above the overall average qty.
+
+SELECT *
+
+FROM sales
+
+WHERE qty > (SELECT AVG(qty) FROM sales)
+
+ORDER BY sale_id;
+
+
+
+Task 2 — Scalar subquery in SELECT (derived column)
+
+Problem: Show each sale with the overall average unit price of all products as a separate column.
+
+SELECT
+
+ sale_id, product_id, qty, discount_pct, sale_date, store,
+
+ (SELECT AVG(unit_price) FROM products) AS avg_unit_price_all
+
+FROM sales
+
+ORDER BY sale_id;
+
+
+
+Task 3 — Subquery with IN (category filter)
+
+Problem: Return sales whose product belongs to Stationery.
+
+SELECT *
+
+FROM sales
+
+WHERE product_id IN (
+
+ SELECT product_id FROM products WHERE category = 'Stationery'
+
+)
+
+ORDER BY sale_id;
+
+ 
+
+Task 4 — Subquery with NOT IN (exclude a category)
+
+Problem: Return sales not in category Electronics.
+
+SELECT *
+
+FROM sales
+
+WHERE product_id NOT IN (
+
+ SELECT product_id FROM products WHERE category = 'Electronics'
+
+)
+
+ORDER BY sale_id;
+
+
+
+Task 5 — Correlated subquery (per-store above-average qty)
+
+Problem: For each store, return rows whose qty is > store’s own average qty.
+
+SELECT *
+
+FROM sales s
+
+WHERE qty > (
+
+ SELECT AVG(qty) FROM sales WHERE store = s.store
+
+)
+
+ORDER BY store, sale_id;
+
+Task 6 — EXISTS for category membership
+
+Problem: Return sales for which the product exists in products with unit_price > 1000.
+
+SELECT *
+
+FROM sales s
+
+WHERE EXISTS (
+
+ SELECT 1
+
+ FROM products p
+
+ WHERE p.product_id = s.product_id
+
+   AND p.unit_price > 1000
+
+)
+
+ORDER BY sale_id;
+
+  
+
+Task 7 — NOT EXISTS to find “orphan” product_ids
+
+Problem: List products that have never been sold.
+
+SELECT *
+
+FROM products p
+
+WHERE NOT EXISTS (
+
+ SELECT 1 FROM sales s WHERE s.product_id = p.product_id
+
+)
+
+ORDER BY product_id;
+
+
+
+Task 8 — ANY/SOME (comparison to set)
+
+Problem: Find products whose price is greater than ANY unit price of Stationery items (i.e., greater than the minimum Stationery price).
+
+SELECT *
+
+FROM products
+
+WHERE unit_price > ANY (
+
+ SELECT unit_price FROM products WHERE category = 'Stationery'
+
+)
+
+ORDER BY unit_price DESC, product_id;
+
+
+
+Task 9 — ALL (comparison to entire set)
+
+Problem: Find products whose price is greater than ALL unit prices of Stationery (i.e., greater than the maximum Stationery price).
+
+SELECT *
+
+FROM products
+
+WHERE unit_price > ALL (
+
+ SELECT unit_price FROM products WHERE category = 'Stationery'
+
+)
+
+ORDER BY unit_price DESC, product_id;
+
+ 
+
+Task 10 — Subquery for “top price per category” list
+
+Problem: Return each product that matches the maximum unit_price of its category.
+
+SELECT *
+
+FROM products p
+
+WHERE unit_price = (
+
+ SELECT MAX(unit_price)
+
+ FROM products
+
+ WHERE category = p.category
+
+)
+
+ORDER BY category, product_id;
+
+
+
+Task 11 — Semi-join via IN: sales only for “premium” products
+
+Problem: A premium product is price ≥ 5000. Return those sales.
+
+SELECT *
+
+FROM sales
+
+WHERE product_id IN (
+
+ SELECT product_id FROM products WHERE unit_price >= 5000
+
+)
+
+ORDER BY sale_id;
+
+
+
+Task 12 — Anti-join via NOT IN: sales of non-discounted categories
+
+Problem: Suppose Accessories category is not allowed today. Return sales whose product is not in Accessories.
+
+SELECT *
+
+FROM sales
+
+WHERE product_id NOT IN (
+
+ SELECT product_id FROM products WHERE category = 'Accessories'
+
+)
+
+ORDER BY sale_id;
