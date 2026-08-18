@@ -1,0 +1,204 @@
+This lab will guide you through setting up a relational database, creating tables, inserting sample data, and practicing various types of subqueries and joins.
+
+
+
+---
+
+
+
+## **Step 1: Database Setup**
+
+### **1.1 Create a Database**
+
+Before proceeding, create a database in your preferred relational database management system (e.g., MySQL, PostgreSQL, or SQL Server).
+
+
+
+
+
+CREATE DATABASE CompanyDB;
+USE CompanyDB; -- For MySQL
+
+
+
+
+---
+
+
+
+## **Step 2: Create Tables**
+
+### **2.1 Create the `Employees` Table**
+
+
+
+CREATE TABLE Employees (
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    DepartmentID INT,
+    Salary DECIMAL(10,2),
+    JoiningDate DATE
+);
+
+
+### **2.2 Create the `Departments` Table**
+
+
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+
+
+
+### **2.3 Create the `Projects` Table**
+
+
+
+CREATE TABLE Projects (
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(100),
+    DepartmentID INT,
+    Budget DECIMAL(12,2),
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
+
+### **2.4 Insert Sample Data**
+
+
+
+INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
+(1, 'IT'),
+(2, 'HR'),
+(3, 'Finance'),
+(4, 'Marketing');
+
+INSERT INTO Employees (EmpID, Name, DepartmentID, Salary, JoiningDate) VALUES
+(101, 'Alice', 1, 70000, '2020-06-15'),
+(102, 'Bob', 2, 50000, '2019-08-10'),
+(103, 'Charlie', 3, 60000, '2021-04-22'),
+(104, 'David', 1, 75000, '2018-12-05'),
+(105, 'Eve', 4, 55000, '2022-02-14');
+
+INSERT INTO Projects (ProjectID, ProjectName, DepartmentID, Budget) VALUES
+(201, 'Website Redesign', 1, 50000),
+(202, 'Employee Engagement', 2, 20000),
+(203, 'Financial Analysis', 3, 30000),
+(204, 'Marketing Campaign', 4, 40000);
+
+
+
+
+---
+
+
+
+## **Lab Questions**
+
+
+
+### **1. Subqueries**
+
+#### **1.1 Single-Row Subquery**
+
+- Find the employee with the highest salary using a subquery.
+
+
+
+
+
+SELECT Name, Salary FROM Employees
+WHERE Salary = (SELECT MAX(Salary) FROM Employees);
+
+
+
+
+✅ **Task:** Write a query to find the employee who has the lowest salary.
+
+
+
+---
+
+
+
+#### **1.2 Multi-Row Subqueries**
+
+- Find employees who earn more than the average salary of all employees.
+
+
+
+SELECT Name, Salary FROM Employees
+WHERE Salary > (SELECT AVG(Salary) FROM Employees);
+
+
+
+
+✅ **Task:** Retrieve the names of all employees who belong to departments where the average salary is above 60,000.
+
+
+
+---
+
+
+
+#### **1.3 Correlated Subqueries**
+
+- Retrieve employees whose salary is greater than the average salary of their department.
+
+
+
+
+
+SELECT Name, Salary FROM Employees e
+WHERE Salary > (SELECT AVG(Salary) FROM Employees WHERE DepartmentID = e.DepartmentID);
+
+
+
+
+✅ **Task:** Find employees who have joined after the average joining date of their respective departments.
+
+
+
+---
+
+
+
+### **2. Joins**
+
+#### **2.1 Joins with Subqueries**
+
+- Retrieve employee names along with their department names using a join.
+
+
+
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+```
+
+
+
+✅ **Task:** Write a query to list all projects along with the department name they belong to.
+
+
+
+---
+
+
+
+#### **2.2 Joins with Aggregate Functions**
+
+- Find the total salary paid in each department.
+
+
+
+SELECT d.DepartmentName, SUM(e.Salary) AS TotalSalary
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+GROUP BY d.DepartmentName;
+
+
+✅ **Task:** Write a query to find the department with the highest total salary.
