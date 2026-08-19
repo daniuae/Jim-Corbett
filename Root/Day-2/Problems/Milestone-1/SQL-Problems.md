@@ -231,6 +231,58 @@ ORDER BY `Revenue Rank`, `Doctor Name`;
 
 ### Requirement
 Find the highest revenue-generating doctor within each specialization.
+```sql
+SELECT
+    specialization AS `Specialization`,
+    doctor_name AS `Doctor Name`,
+    total_revenue AS `Total Revenue`
+FROM
+(
+    SELECT
+        specialization,
+        doctor_name,
+        doctor_id,
+        total_revenue,
+        ROW_NUMBER() OVER (
+            PARTITION BY specialization
+            ORDER BY total_revenue DESC, doctor_id
+        ) AS rn
+    FROM
+    (
+        SELECT
+            d.doctor_id,
+            d.doctor_name,
+            d.specialization,
+            COALESCE(SUM(b.amount), 0) AS total_revenue
+        FROM doctors d
+        LEFT JOIN appointments a
+            ON d.doctor_id = a.doctor_id
+        LEFT JOIN billing b
+            ON a.appointment_id = b.appointment_id
+        GROUP BY
+            d.doctor_id,
+            d.doctor_name,
+            d.specialization
+    ) AS doctor_revenue
+) AS ranked_doctors
+WHERE rn = 1
+ORDER BY specialization;
+
+Outer Query
+    │
+    ├── Filter: rn = 1
+    │
+    └── Derived Table: ranked_doctors
+            │
+            ├── ROW_NUMBER()
+            │
+            └── Derived Table: doctor_revenue
+                    │
+                    ├── doctors
+                    ├── appointments
+                    ├── billing
+                    ├── SUM(amount)
+                    └── GROUP BY doctor
 
 ```sql
 WITH doctor_revenue AS (
