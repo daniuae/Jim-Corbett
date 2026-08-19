@@ -2531,4 +2531,4 @@ SMARTMART SQL
 
 The SmartMart schema is particularly suitable for this because orders connects customers to order items, order items connect products, and products connect categories, while payments and inventory provide additional branches for more complex joins.
 
-Best next step: turn this into a 50–100 question SmartMart SQL assignment, with questions first and solutions separately, progressing from beginner → intermediate → advanced → interview-level.
+
