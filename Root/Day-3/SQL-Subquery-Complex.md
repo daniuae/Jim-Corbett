@@ -294,3 +294,134 @@ SUM(o.total\_amount)
 
 is an **aggregate calculation** performed for each customer.
 
+
+
+```sql
+WITH max_price AS (
+    -- Step 1: Find the highest product price
+    SELECT MAX(price) AS max_price
+    FROM products
+),
+
+most_expensive_product AS (
+    -- Step 2: Find the category of the most expensive product
+    SELECT category_id
+    FROM products
+    WHERE price = (
+        SELECT max_price
+        FROM max_price
+    )
+),
+
+category_products AS (
+    -- Step 3: Find all products belonging to that category
+    SELECT product_id
+    FROM products
+    WHERE category_id IN (
+        SELECT category_id
+        FROM most_expensive_product
+    )
+)
+
+-- Step 4: Find customers who purchased those products
+SELECT DISTINCT
+    c.first_name,
+    c.last_name
+FROM customers c
+JOIN orders o
+    ON c.customer_id = o.customer_id
+JOIN order_items oi
+    ON o.order_id = oi.order_id
+WHERE oi.product_id IN (
+    SELECT product_id
+    FROM category_products
+);
+```
+
+
+How the CTEs flow
+max_price
+    ↓
+most_expensive_product
+    ↓
+category_products
+    ↓
+customers + orders + order_items
+
+
+
+More specifically:
+
+MAX(price)
+    ↓
+Highest price
+    ↓
+category_id
+    ↓
+All product_id values in that category
+    ↓
+Matching order_id values
+    ↓
+customer_id values
+    ↓
+Customer names
+Even cleaner CTE version
+
+Because the categories table in your original query doesn't contribute anything to the result, it can be removed:
+```sql
+WITH most_expensive_product AS (
+    SELECT category_id
+    FROM products
+    WHERE price = (
+        SELECT MAX(price)
+        FROM products
+    )
+),
+
+
+category_products AS (
+    SELECT product_id
+    FROM products
+    WHERE category_id IN (
+        SELECT category_id
+        FROM most_expensive_product
+    )
+)
+
+
+SELECT DISTINCT
+    c.first_name,
+    c.last_name
+FROM customers c
+JOIN orders o
+    ON c.customer_id = o.customer_id
+JOIN order_items oi
+    ON o.order_id = oi.order_id
+WHERE oi.product_id IN (
+    SELECT product_id
+    FROM category_products
+);
+```
+Best teaching pattern
+
+For a nested subquery, you can transform:
+
+Nested Subquery
+     ↓
+Identify independent questions
+     ↓
+One question = one CTE
+     ↓
+Connect CTEs
+     ↓
+Final SELECT
+
+For this problem:
+
+Step	CTE	Produces
+1	most_expensive_product	category_id
+2	category_products	product_id
+3	Final query	Customer names
+
+The CTE version is usually easier to read, debug, and explain than the deeply nested version.
+
