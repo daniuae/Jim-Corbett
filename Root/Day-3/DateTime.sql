@@ -1,5 +1,37 @@
 USE smartdb;
 
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100) NOT NULL,
+    manager_id INT,
+    date_of_birth DATE,
+    join_date DATE,
+    FOREIGN KEY (manager_id)
+        REFERENCES employees(employee_id)
+);
+
+
+
+
+INSERT INTO employees
+(employee_id, employee_name, manager_id, date_of_birth, join_date)
+VALUES
+(1, 'John', NULL, '1978-05-15', '2010-06-10'),
+(2, 'Alice', 1, '1982-08-20', '2018-03-12'),
+(3, 'Bob', 1, '1985-11-02', '2021-07-19'),
+(4, 'Charlie', 2, '1989-01-28', '2023-01-15'),
+(5, 'David', 2, '1992-06-10', '2019-09-25'),
+(6, 'Emma', 3, '1987-12-25', '2024-02-20'),
+(7, 'Frank', 3, '1975-03-08', '2015-11-30'),
+(8, 'Grace', 4, '1990-09-16', '2022-05-05'),
+(9, 'Henry', 4, '1983-04-23', '2020-08-17'),
+(10, 'Irene', 5, '1995-07-01', '2025-01-10');
+
+
+USE smartdb;
+
 -- =====================================================
 -- 1. Employees born in the 1980s
 -- =====================================================
@@ -102,6 +134,20 @@ SELECT
 FROM employees
 WHERE DAYOFWEEK(date_of_birth) IN (1, 7);
 
+| Requirement              | MySQL Function    |
+| ------------------------ | ----------------- |
+| Extract birth year       | `YEAR()`          |
+| Add 60 years             | `DATE_ADD()`      |
+| Last 5 years             | `DATE_SUB()`      |
+| Day number               | `DAYOFWEEK()`     |
+| Day name                 | `DAYNAME()`       |
+| Month name               | `MONTHNAME()`     |
+| Difference between dates | `DATEDIFF()`      |
+| Current date             | `CURDATE()`       |
+| Calculate age            | `TIMESTAMPDIFF()` |
+| Average age              | `AVG()`           |
+| Format date              | `DATE_FORMAT()`   |
+| Convert string to date   | `STR_TO_DATE()`   |
 
 -- =====================================================
 -- 7. Average age of employees
