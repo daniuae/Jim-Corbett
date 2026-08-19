@@ -13,13 +13,7 @@ SELECT
    ) AS row\_num  
 FROM payments;
 
-Explain:
 
-ROW\_NUMBER()  
-    ↓  
-Assigns a unique sequence  
-    ↓  
-Based on payment\_date  
 ---
 
 # **2\. ROW\_NUMBER() with PARTITION BY**
@@ -51,7 +45,6 @@ CREDIT\_CARD
  2  
  3
 
-The numbering **restarts for every payment method**.
 
 ---
 
@@ -113,9 +106,7 @@ SELECT
 
 FROM payments;
 
-This is an excellent first example of:
 
-PARTITION BY \+ ORDER BY \+ RANK  
 ---
 
 # **6\. COUNT() OVER()**
@@ -199,13 +190,11 @@ payment\_id   method        amount     method\_total
 503          UPI            4000       ...  
 505          UPI           20000      ...
 
-Every UPI row gets the **same UPI total**.
 
 ---
 
 # **10\. Running Total**
 
-This is one of the most important window-function examples.
 
 ### **Question**
 
@@ -246,9 +235,6 @@ SELECT
 
 FROM payments;
 
-This means:
-
-> Start a new running total for every payment method.
 
 ---
 
@@ -296,7 +282,6 @@ SELECT
 
 FROM payments;
 
-Very simple and useful for beginners.
 
 ---
 
@@ -354,7 +339,6 @@ Next payment
 
 # **17\. LAG() — Calculate Difference**
 
-This is a very good real-world example.
 
 SELECT  
    payment\_id,  
@@ -373,9 +357,6 @@ SELECT
 
 FROM payments;
 
-Business question:
-
-> How much did the payment change compared with the previous payment?
 
 ---
 
@@ -399,7 +380,6 @@ FROM payments;
 
 # **19\. LAST\_VALUE()**
 
-For `LAST_VALUE()`, explicitly specify the window frame.
 
 SELECT  
    payment\_id,  
@@ -414,7 +394,6 @@ SELECT
 
 FROM payments;
 
-This is a good opportunity to explain:
 
 > `LAST_VALUE()` depends on the window frame.
 
@@ -446,7 +425,6 @@ Group 4 → Lowest payments
 
 # **21\. Window function with INVENTORY**
 
-Now use your `inventory` table.
 
 ### **Question**
 
@@ -467,7 +445,6 @@ FROM inventory;
 
 # **22\. Rank inventory within each warehouse**
 
-This is much more useful.
 
 SELECT  
    inventory\_id,  
@@ -482,9 +459,6 @@ SELECT
 
 FROM inventory;
 
-Business question:
-
-> Which product has the highest stock in each warehouse?
 
 ---
 
@@ -567,20 +541,11 @@ SELECT
 
 FROM payments;
 
-Explain:
 
-Current row  
-\+  
-Previous row  
-\+  
-2nd previous row  
-\=  
-3-row moving average  
 ---
 
 # **28\. A very good "all basics in one query"**
 
-Once trainees understand the individual functions, use this query:
 
 SELECT  
    payment\_id,  
@@ -643,4 +608,3 @@ This single query gives you:
                          │  
                          ↓  
                    RUNNING TOTAL
-
