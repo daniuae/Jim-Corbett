@@ -1,3 +1,18 @@
+```sql
+
+SELECT c.first_name, c.last_name, SUM(o.total_amount) AS total_spent
+FROM customers c
+    JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name
+HAVING
+    SUM(o.total_amount) > (
+        SELECT AVG(total_amount)
+        FROM orders
+    );
+```
 The query has **3 logical layers**:
 
 1\. Main tables → customers \+ orders  
