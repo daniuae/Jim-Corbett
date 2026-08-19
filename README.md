@@ -83,6 +83,16 @@ Additional practice and reference materials from the **Yellow Stone** batch.
 
 ---
 
+## 📦 You tube Links
+
+
+https://youtu.be/7S_tz1z_5bA
+
+
+https://youtu.be/JtaOmwnR6AM
+
+
+https://www.youtube.com/watch?v=QvTo1_-n0UE&list=PLvepBxfiuao2y4Pgdfregh7hOpxaJ5oxd
 # 🧭 Learning Path
 
 ```text
