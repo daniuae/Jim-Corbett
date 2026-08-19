@@ -1,3 +1,4 @@
+
 # 🐅 Jim-Corbett
 
 > ## 🎓 Training Dashboard — Jim Corbett Team
@@ -21,7 +22,7 @@
 
 
 
-### 🗓️ 19-Aug-2026 — Today's Labs
+### 🗓️ 19-Aug-2026  
 
 | Resource | Description | Link |
 |---|---|---|
