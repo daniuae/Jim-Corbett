@@ -1,8 +1,4 @@
-\# SmartMart SQL — Basic to Intermediate Complete Practice
 
-\#\# Database
-
-\`\`\`sql  
 USE smartdb;  
 ---
 
