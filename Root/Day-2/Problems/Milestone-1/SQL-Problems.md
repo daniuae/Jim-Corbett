@@ -284,7 +284,7 @@ Outer Query
                     ├── SUM(amount)
                     └── GROUP BY doctor
 
-```sql
+-- With CTE
 WITH doctor_revenue AS (
     SELECT
         d.doctor_id,
