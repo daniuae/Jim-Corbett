@@ -85,7 +85,7 @@ Additional practice and reference materials from the **Yellow Stone** batch.
 # 🧭 Learning Path
 
 ```text
-                    🐅 im-Corbett
+                    🐅 Jim-Corbett
                          │
                          ▼
                  📚 Course Syllabus
@@ -109,4 +109,4 @@ Additional practice and reference materials from the **Yellow Stone** batch.
                 🚀 Advanced Practice
                          │
                          ▼
-                    🐍 SQL + Python#------------------------------------------------------------------------------------------------
+                    🐍 SQL + Python
