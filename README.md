@@ -17,7 +17,7 @@
 |---|---|---|
 | 🧪 SQL Problems | Milestone-1 SQL Problems | [Open SQL Problems](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Day-2/Problems/Milestone-1/SQL-Problems.md) |
 | 📚 Day 3 | Day-3 Training Materials | [Open Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-3) |
- | 📚 SQL | [Open SQL Problems](https://github.com/daniuae/mysql/blob/main/Presentation/Subquery/Subquery.md) |
+ | 📚 SQL  | SQL Training Materials | [Open SQL Problems](https://github.com/daniuae/mysql/blob/main/Presentation/Subquery/Subquery.md) |
 
 --
 
