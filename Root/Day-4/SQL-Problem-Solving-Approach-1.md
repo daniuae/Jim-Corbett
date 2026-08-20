@@ -693,15 +693,13 @@ AVG(...) OVER (
 
 For example:
 
-Category     Product    Revenue    Category Avg
-
-\------------------------------------------------
-
-Electronics  Laptop     50000      33333
-
-Electronics  Phone      40000      33333
-
-Electronics  Mouse      10000      33333
+| category    | product | month | revenue |
+|-------------|---------|-------|---------|
+| Electronics | Laptop  | Jan   | 50000   |
+| Electronics | Phone   | Jan   | 40000   |
+| Electronics | Mouse   | Jan   | 10000   |
+| Furniture   | Chair   | Jan   | 20000   |
+| Furniture   | Desk    | Jan   | 30000   |
 
 Then:
 
