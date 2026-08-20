@@ -339,50 +339,6 @@ It is several smaller problems stacked together.
 For the example above:
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/3856c58f-845e-43f6-898d-d5f9c103d29e" />
 
-Layer 1
-
-Get orders
-
-     ↓
-
-Layer 2
-
-Join products/categories
-
-     ↓
-
-Layer 3
-
-Calculate monthly product revenue
-
-     ↓
-
-Layer 4
-
-Calculate category average
-
-     ↓
-
-Layer 5
-
-Rank products within category/month
-
-     ↓
-
-Layer 6
-
-Get previous month's revenue
-
-     ↓
-
-Layer 7
-
-Calculate percentage change
-
-     ↓
-
-Layer 8
-
 Filter top 2 + revenue condition
 
 This is much easier than thinking:
