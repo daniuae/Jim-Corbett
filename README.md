@@ -17,9 +17,9 @@
 | Resource | Description | Link |
 |---|---|---|
 | 🧪 SQL Problems | Milestone-1 / MOCK - SQL Problems | [Open SQL Problems](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-4) |
-| 📚 Day 3 | Day-4 Training Materials | [Open Day-3]() |
-| 📚 SQL  | SQL Training Materials | [Open SQL Problems]() |
-
+| 📚 Day 3 | Day-4 Training Materials | [Open Day-4](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-4) |
+| 📚 SQL-Self Join  | SQL Training Materials | [Open SQL Problems](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-4/Self-Join) |
+| 📚 SQL-SubQueries  | SQL Training Materials | [Open SQL Problems]() |
 
 
 ### 🗓️ 19-Aug-2026  
