@@ -337,6 +337,7 @@ Complex SQL is usually not one problem.
 It is several smaller problems stacked together.
 
 For the example above:
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/3856c58f-845e-43f6-898d-d5f9c103d29e" />
 
 Layer 1
 
