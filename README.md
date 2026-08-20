@@ -21,6 +21,9 @@
 | 📚 SQL-Self Join  | SQL Training Materials | [Open SQL Problems](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-4/Self-Join) |
 | 📚 SQL-SubQueries  | SQL Training Materials | [Open SQL Problems]() |
 
+### Survey
+
+https://s.surveyplanet.com/8ona61lp
 
 ### 🗓️ 19-Aug-2026  
 
