@@ -12,6 +12,17 @@
 
 ## 📢 Important Announcements & Links
 
+### 🗓️ 21-Aug-2026 — Today's Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 🧪 SQL Problems | Milestone-1 / MOCK - SQL Problems | [Open SQL Problems]() |
+| 📚 Day 5 | Day-5 Training Materials | [Open Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework) |
+| 📚 SQL  | SQL Training Materials | [Open SQL Problems]() |
+| 📚 SQL-Assessments  | SQL Assessments(Weekly Samples) | [Open SQL Problems]() |
+| 📚 SQL-Adventureworks Database  | Backup File | [Backup File](https://github.com/daniuae/postgres/tree/main/Backups/Advantureworks) |
+
+
 ### 🗓️ 20-Aug-2026 — Today's Labs
 
 | Resource | Description | Link |
