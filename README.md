@@ -16,7 +16,7 @@
 
 | Resource | Description | Link |
 |---|---|---|
-| 🧪 SQL Problems | [No]() |
+| 🧪 SQL Problems| SQL | [No]() |
 | 📚 Day 5 | Day-5 Training Materials | [Open Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework) |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL  | SQL   | [No]() |
