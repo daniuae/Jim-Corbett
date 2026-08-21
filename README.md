@@ -16,7 +16,7 @@
 
 | Resource | Description | Link |
 |---|---|---|
-| 🧪 SQL Problems | Milestone-1 / MOCK - SQL Problems | [Open SQL Problems]() |
+| 🧪 SQL Problems | [No]() |
 | 📚 Day 5 | Day-5 Training Materials | [Open Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework) |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL  | SQL   | [No]() |
