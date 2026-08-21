@@ -18,8 +18,8 @@
 |---|---|---|
 | 🧪 SQL Problems | Milestone-1 / MOCK - SQL Problems | [Open SQL Problems]() |
 | 📚 Day 5 | Day-5 Training Materials | [Open Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework) |
-| 📚 SQL  | SQL Training Materials | [Open SQL Problems]() |
-| 📚 SQL-Assessments  | SQL Assessments(Weekly Samples) | [Open SQL Problems]() |
+| 📚 SQL  | SQL   | [No]() |
+| 📚 SQL  | SQL   | [No]() |
 | 📚 SQL-Adventureworks Database  | Backup File | [Backup File](https://github.com/daniuae/postgres/tree/main/Backups/Advantureworks) |
 
 
