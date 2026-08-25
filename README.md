@@ -10,7 +10,30 @@
 
 ---
 
-## 📢 Important Announcements & Links
+## 📢 Weekly - Topics Day wise 
+
+### 🗓️ 25-Aug-2026 — Today's Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 🧪 SQL Problems| SQL | [No]() |
+| 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-5]() |
+| 📚 SQL  | SQL   | [No]() |
+| 📚 SQL  | SQL   | [No]() |
+| 📚 SQL-Advance  |Advance SQL | [Content]() |
+
+---
+### 🗓️ 24-Aug-2026 — Today's Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 🧪 SQL Problems| SQL | [No]() |
+| 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-5]() |
+| 📚 SQL  | SQL   | [No]() |
+| 📚 SQL  | SQL   | [No]() |
+| 📚 SQL-Advance  |Advance SQL | [Content]() |
+
+---
 
 ### 🗓️ 21-Aug-2026 — Today's Tasks
 
@@ -43,6 +66,8 @@ https://s.surveyplanet.com/8ona61lp
 | 🧪 SQL Problems | Milestone-1 SQL Problems | [Open SQL Problems](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Day-2/Problems/Milestone-1/SQL-Problems.md) |
 | 📚 Day 3 | Day-3 Training Materials | [Open Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Day-3) |
  | 📚 SQL  | SQL Training Materials | [Open SQL Problems](https://github.com/daniuae/mysql/blob/main/Presentation/Subquery/Subquery.md) |
+
+## 📢 Important Announcements & Links
 
 
 
