@@ -16,7 +16,7 @@
 
 | Resource | Description | Link |
 |---|---|---|
-| 🧪 SQL Problems| SQL | [No]() |
+
 | 📚 Week-2 Day 2 | Day-2 Training Materials | [Open Day-2](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-2/Presentation-Topics-Day2.md)|
 
 
@@ -25,7 +25,7 @@
 
 | Resource | Description | Link |
 |---|---|---|
-| 🧪 SQL Problems| SQL | [No]() |
+
 | 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-1](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-1) |
 
 
