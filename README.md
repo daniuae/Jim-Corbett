@@ -18,7 +18,7 @@
 |---|---|---|
 | 🧪 SQL Problems| SQL | [No]() |
 | 📚 Week-2 Day 2 | Day-2 Training Materials | [Open Day-2](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-2/Presentation-Topics-Day2.md)|
-| 📚 SQL-Advance  |Advance SQL | [Content]() |
+
 
 ---
 ### 🗓️ 24-Aug-2026 — Today's Tasks
@@ -27,7 +27,7 @@
 |---|---|---|
 | 🧪 SQL Problems| SQL | [No]() |
 | 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-1](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-1) |
-| 📚 SQL-Advance  |Advance SQL | [Content]() |
+
 
 ---
 
