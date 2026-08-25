@@ -17,7 +17,7 @@
 | Resource | Description | Link |
 |---|---|---|
 | 🧪 SQL Problems| SQL | [No]() |
-| 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-5]() |
+| 📚 Week-2 Day 2 | Day-2 Training Materials | [Open Day-2]( [https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-1/Presentation-Topics.md](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-2/Presentation-Topics-Day2.md)) |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL-Advance  |Advance SQL | [Content]() |
@@ -28,12 +28,20 @@
 | Resource | Description | Link |
 |---|---|---|
 | 🧪 SQL Problems| SQL | [No]() |
-| 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-5]() |
+| 📚 Week-2 Day 1 | Day-1 Training Materials | [Open Day-1](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-1/Presentation-Topics.md) |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL  | SQL   | [No]() |
 | 📚 SQL-Advance  |Advance SQL | [Content]() |
 
 ---
+
+### Links
+# https://github.com/daniuae/Jim-Corbett/blob/main/Root/Week-2/Day-1/Presentation-Topics.md
+# https://github.com/daniuae/postgres/tree/main/Code
+# https://github.com/daniuae/postgres/tree/main/Backups/Advenbtureworks
+# https://github.com/daniuae/Jim-Corbett/blob/main/Root/Problems/Weekly/AllApproach.sql
+# https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework
+
 
 ### 🗓️ 21-Aug-2026 — Today's Tasks
 
