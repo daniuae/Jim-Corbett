@@ -6,11 +6,22 @@
 > **Training Date:** 19-Aug-2026  
 > **Focus:** SQL / Database Training  
 > **Batch:** Jim Corbett  
-> **Trainer:** Dani
+> **Trainer:** Dani Krishnamurthi
 
 ---
 
 ## 📢 Weekly - Topics Day wise 
+### 🗓️ 26-Aug-2026 — Today's Topics and Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+
+| 📚 Week-2 Day 3 | Day-3 Training Materials | [Open Day-3]()|
+[
+](https://drive.google.com/file/d/1dpbpxDWvSULSL3wwpt2Ne9MysXyUnOXn/view?usp=share_link)
+
+| 📚 Week-2 Day 3 | Day-3 Training Materials | [Open Day-3]()| [(https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-3)] 
+
 
 ### 🗓️ 25-Aug-2026 — Today's Tasks
 
