@@ -15,9 +15,9 @@
 
 | Resource | Description | Link |
 |---|---|---|
-| 📚 Week-2 Day 2 | Day-2 Training Materials | [Open Day-2](https://drive.google.com/file/d/1dpbpxDWvSULSL3wwpt2Ne9MysXyUnOXn/view?usp=share_link)|
+| 📚 Week-2 Day 3 | Day-3 Training Materials | [Open Day-2](https://drive.google.com/file/d/1dpbpxDWvSULSL3wwpt2Ne9MysXyUnOXn/view?usp=share_link)|
+| 📚 Week-2 Day 3 | Day-3 Training Materials | [Open Day-2](https://drive.google.com/file/d/1dpbpxDWvSULSL3wwpt2Ne9MysXyUnOXn/view?usp=share_link)|
 
-| 📚 Week-2 Day 2 | Day-2 Training Materials | [Open Day-2]([https://drive.google.com/file/d/1dpbpxDWvSULSL3wwpt2Ne9MysXyUnOXn/view?usp=share_link](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-3))|
 
 
 ### 🗓️ 25-Aug-2026 — Today's Tasks
