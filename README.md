@@ -46,6 +46,7 @@
 # https://github.com/daniuae/Jim-Corbett/blob/main/Root/Problems/Weekly/AllApproach.sql
 # https://github.com/daniuae/Jim-Corbett/tree/main/Root/SQL/ProblemSolvingFramework
 
+# https://www.youtube.com/watch?v=5MgBikgcWnY
 
 ### 🗓️ 21-Aug-2026 — Today's Tasks
 
