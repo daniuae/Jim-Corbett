@@ -7,10 +7,22 @@
 > **Focus:** SQL / Database Training  
 > **Batch:** Jim Corbett  
 > **Trainer:** Dani Krishnamurthi
-
----
-
+------------------------------------------------------------------------------------------------------------------------
 ## 📢 Weekly - Topics Day wise 
+------------------------------------------------------------------------------------------------------------------------
+
+### 🗓️ 28-Aug-2026 — Today's Topics and Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 📚 Week-2 Day 5 | Day-5 Study Materials | [Presentation Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/Presentation)|
+| 📚 Week-2 Day 5 | Day-3 Training Materials | [Labs Day-3]([https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/LABS))|
+
+| 📚 For Refreshers - Basic - Intermediate - Advance | SQL Tutorial | [SQL Video Tutorials](https://www.youtube.com/watch?v=hlGoQC332VM)|
+
+------------------------------------------------------------------------------------------------------------------------
+
+
 ### 🗓️ 26-Aug-2026 — Today's Topics and Tasks
 
 | Resource | Description | Link |
