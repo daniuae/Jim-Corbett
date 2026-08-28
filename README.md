@@ -16,7 +16,7 @@
 | Resource | Description | Link |
 |---|---|---|
 | 📚 Week-2 Day 5 | Day-5 Study Materials | [Presentation Day-5](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/Presentation)|
-| 📚 Week-2 Day 5 | Day-3 Training Materials | [Labs Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/LABS)|
+| 📚 Week-2 Day 5 | Day-5 Labs  | [Labs Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/LABS)|
 | 📚 For Refreshers - Basic - Intermediate - Advance | SQL Tutorial | [SQL Video Tutorials](https://www.youtube.com/watch?v=hlGoQC332VM)|
 
 ------------------------------------------------------------------------------------------------------------------------
