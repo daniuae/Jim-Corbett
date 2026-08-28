@@ -19,6 +19,8 @@
 | 📚 Week-2 Day 5 | Day-5 Labs  | [Labs Day-3](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-2/Day-5/LABS)|
 | 📚 For Refreshers - Basic - Intermediate - Advance | SQL Tutorial | [SQL Video Tutorials](https://www.youtube.com/watch?v=hlGoQC332VM)|
 
+| 📚 Week-2 Day 5 | Day-5 Sample Questions | [Sample Question Patterns](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Problems/Mock/August)|
+
 ------------------------------------------------------------------------------------------------------------------------
 
 
