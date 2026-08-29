@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Learning Portal</title>
+<style>
+:root{
+  --bg:#0b1020; --panel:#121a2e; --panel2:#18233b; --text:#eef3ff;
+  --muted:#9ba9c7; --accent:#6ee7b7; --accent2:#60a5fa; --gold:#fbbf24;
+  --danger:#fb7185; --border:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 15% 10%,rgba(96,165,250,.18),transparent 28%),
+radial-gradient(circle at 85% 0%,rgba(110,231,183,.12),transparent 25%),var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1250px;margin:auto;padding:28px}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:linear-gradient(135deg,#3776ab,#ffd343);box-shadow:0 12px 35px rgba(55,118,171,.25)}
+h1{font-size:28px;margin:0}.subtitle{color:var(--muted);margin-top:5px}
+.header-actions{display:flex;gap:10px;flex-wrap:wrap}
+button,.search{border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);border-radius:12px;padding:11px 15px;cursor:pointer}
+.search{width:260px;outline:none}
+.hero{background:linear-gradient(135deg,rgba(96,165,250,.17),rgba(110,231,183,.08));border:1px solid var(--border);border-radius:24px;padding:28px;margin-bottom:22px}
+.hero h2{font-size:34px;margin:0 0 8px}.hero p{color:var(--muted);max-width:760px;line-height:1.6;margin:0 0 20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:rgba(0,0,0,.16);border:1px solid var(--border);border-radius:16px;padding:17px}
+.stat strong{font-size:25px;display:block}.stat span{font-size:13px;color:var(--muted)}
+.section-title{display:flex;align-items:end;justify-content:space-between;margin:30px 0 14px}
+.section-title h2{margin:0;font-size:21px}.section-title span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:rgba(18,26,46,.88);border:1px solid var(--border);border-radius:20px;padding:20px;position:relative;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:rgba(110,231,183,.35);box-shadow:0 16px 35px rgba(0,0,0,.18)}
+.card .icon{font-size:27px}.card h3{margin:12px 0 7px;font-size:18px}.card p{color:var(--muted);font-size:14px;line-height:1.55;min-height:43px}
+.tag{display:inline-block;padding:5px 9px;border-radius:99px;background:rgba(96,165,250,.12);color:#93c5fd;font-size:11px;margin:3px 4px 0 0}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
+.open{padding:9px 13px;border-radius:10px;background:var(--accent);color:#06251a;font-weight:700;font-size:13px}
+.check{font-size:12px;color:var(--muted);cursor:pointer}
+.progress-wrap{margin-top:12px}.progress{height:7px;background:#26324c;border-radius:20px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));width:0;transition:.3s}
+.learning-path{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;text-align:center}
+.step b{display:block;margin-bottom:6px}.step span{font-size:12px;color:var(--muted)}
+.callout{margin-top:22px;padding:18px;border:1px solid rgba(251,191,36,.2);background:rgba(251,191,36,.06);border-radius:18px}
+.callout strong{color:var(--gold)}
+footer{text-align:center;color:var(--muted);padding:35px 0 15px;font-size:12px}
+.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.learning-path{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.grid,.stats{grid-template-columns:1fr}.container{padding:18px}.search{width:100%}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand">
+    <div class="logo">🐍</div>
+    <div><h1>Python Learning Portal</h1><div class="subtitle">Learn → Practice → Debug → Challenge → Build</div></div>
+  </div>
+  <div class="header-actions">
+    <input id="search" class="search" placeholder="🔎 Search resources...">
+    <button onclick="resetProgress()">Reset Progress</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>🚀 Your Python Mission Control</h2>
+  <p>A single launchpad for Python fundamentals, 30-day learning, milestones, coding problems, SQL + Python, references and gamified practice.</p>
+  <div class="stats">
+    <div class="stat"><strong id="total">0</strong><span>Learning Resources</span></div>
+    <div class="stat"><strong id="completed">0</strong><span>Completed</span></div>
+    <div class="stat"><strong id="percent">0%</strong><span>Overall Progress</span></div>
+    <div class="stat"><strong>🐍</strong><span>Python Data Engineering Track</span></div>
+  </div>
+</section>
+
+<div class="section-title"><h2>🧭 Learning Path</h2><span>Recommended journey</span></div>
+<div class="learning-path">
+  <div class="step"><b>01 · Foundation</b><span>Python Basics</span></div>
+  <div class="step"><b>02 · Build Habit</b><span>Python in 30 Days</span></div>
+  <div class="step"><b>03 · Validate</b><span>Milestones</span></div>
+  <div class="step"><b>04 · Practice</b><span>Problems</span></div>
+  <div class="step"><b>05 · Expand</b><span>SQL + Python + DE</span></div>
+</div>
+
+<div class="section-title"><h2>📚 Core Learning</h2><span>Start here</span></div>
+<div class="grid">
+  <article class="card resource" data-title="Python Basics">
+    <div class="icon">🐣</div><h3>Python Basics</h3>
+    <p>Core Python concepts, syntax and foundational programming skills.</p>
+    <span class="tag">Foundation</span><span class="tag">Must Read</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Python_Batch_YellowStone/blob/main/Root/Basic/PythonBasic.md">Open Course</a><label class="check"><input type="checkbox" data-key="basic"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="Python in 30 Days">
+    <div class="icon">📅</div><h3>Python in 30 Days</h3>
+    <p>A day-by-day practice journey designed to build consistency and fluency.</p>
+    <span class="tag">30 Days</span><span class="tag">Practice</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/python/tree/main/Python_In_30_Days">Open Course</a><label class="check"><input type="checkbox" data-key="30days"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="Python Milestones">
+    <div class="icon">🏆</div><h3>Python Milestones</h3>
+    <p>Use milestone concepts to validate your learning and identify gaps.</p>
+    <span class="tag">Assessment</span><span class="tag">Validation</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Python_Batch_YellowStone/blob/main/Root/MilestoneConcepts/Python_Milestone.md">Open Milestones</a><label class="check"><input type="checkbox" data-key="milestone"> Done</label></div>
+  </article>
+</div>
+
+<div class="section-title"><h2>💻 Problems & Practice</h2><span>Practice beats passive reading</span></div>
+<div class="grid">
+  <article class="card resource" data-title="Python Problems">
+    <div class="icon">🧩</div><h3>Problem Bank</h3><p>Hands-on Python problems for converting concepts into problem-solving ability.</p>
+    <span class="tag">Problems</span><span class="tag">Coding</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Python_Batch_YellowStone/tree/main/Root/Problems">Solve Problems</a><label class="check"><input type="checkbox" data-key="problems"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="Post Week 3 Problems">
+    <div class="icon">🔥</div><h3>Post-Week-3 Challenges</h3><p>Higher-level practice for learners ready to move beyond the basics.</p>
+    <span class="tag">Advanced</span><span class="tag">Challenge</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Python_Batch_YellowStone/tree/main/Root/Problems/Post-Week-3">Take Challenge</a><label class="check"><input type="checkbox" data-key="post3"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="CodeDex Gamified Python">
+    <div class="icon">🎮</div><h3>Gamified Python</h3><p>Turn Python practice into a game-like experience with challenges and progression.</p>
+    <span class="tag">Gamified</span><span class="tag">Fun</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://www.codedex.io/python">Play & Learn</a><label class="check"><input type="checkbox" data-key="codedex"> Done</label></div>
+  </article>
+</div>
+
+<div class="section-title"><h2>🧠 Data Engineering Extensions</h2><span>Connect Python to the bigger picture</span></div>
+<div class="grid">
+  <article class="card resource" data-title="Python Repository">
+    <div class="icon">🗂️</div><h3>Python Repository</h3><p>Central Python workspace containing additional learning and practice material.</p>
+    <span class="tag">Reference</span><span class="tag">Repository</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/python/tree/main">Explore</a><label class="check"><input type="checkbox" data-key="pyrepo"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="SQL Python Syllabus">
+    <div class="icon">🔗</div><h3>SQL + Python</h3><p>Bridge Python programming with SQL and data-oriented problem solving.</p>
+    <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Data</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/SQL-Python/blob/main/Syllabus/SQL-Python.md">Open Syllabus</a><label class="check"><input type="checkbox" data-key="sqlpy"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="SQL SELECT">
+    <div class="icon">🧮</div><h3>SQL SELECT</h3><p>Strengthen SQL querying fundamentals alongside Python data skills.</p>
+    <span class="tag">SQL</span><span class="tag">Querying</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/SQL-Python/blob/main/Syllabus/SQL-SELECT.md">Open SQL</a><label class="check"><input type="checkbox" data-key="sqlselect"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="Databricks Study Material">
+    <div class="icon">🧱</div><h3>Databricks Study Material</h3><p>Connect your Python learning journey to modern data engineering workflows.</p>
+    <span class="tag">Data Engineering</span><span class="tag">Databricks</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/DatabricksYS/blob/main/Root/Databricks/Week-8/Day-1/Study-Material.md">Study</a><label class="check"><input type="checkbox" data-key="databricks"> Done</label></div>
+  </article>
+</div>
+
+<div class="section-title"><h2>📖 References & Mindset</h2><span>Read before / during the course</span></div>
+<div class="grid">
+  <article class="card resource" data-title="References Root">
+    <div class="icon">📚</div><h3>Master Reference Hub</h3><p>Browse the complete Root repository and discover supporting material.</p>
+    <span class="tag">Reference Hub</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Python_Batch_YellowStone/tree/main/Root">Browse Root</a><label class="check"><input type="checkbox" data-key="root"> Done</label></div>
+  </article>
+
+  <article class="card resource" data-title="How To Learn">
+    <div class="icon">🧭</div><h3>How To Learn</h3><p>Read this before the course to build a deliberate and effective learning approach.</p>
+    <span class="tag">Mindset</span><span class="tag">Learning</span>
+    <div class="card-footer"><a class="open" target="_blank" href="https://github.com/daniuae/Just_Me_and_Dany/blob/main/Learning/How_To_Learn.MD">Read First</a><label class="check"><input type="checkbox" data-key="learn"> Done</label></div>
+  </article>
+</div>
+
+<div class="callout">
+  <strong>🎯 Trainer Rule:</strong> Don't measure learning by how much you read. Measure it by what you can <b>explain, code, debug, solve and build</b>.
+</div>
+
+<footer>Python Learning Portal · Built as a single-file dashboard · Progress is saved locally in your browser</footer>
+</div>
+
+<script>
+const boxes=[...document.querySelectorAll('input[type="checkbox"]')];
+const resources=[...document.querySelectorAll('.resource')];
+
+function loadProgress(){
+  boxes.forEach(b=>b.checked=localStorage.getItem('py_'+b.dataset.key)==='1');
+  updateStats();
+}
+function updateStats(){
+  const done=boxes.filter(b=>b.checked).length;
+  document.getElementById('total').textContent=boxes.length;
+  document.getElementById('completed').textContent=done;
+  document.getElementById('percent').textContent=Math.round(done/boxes.length*100)+'%';
+}
+boxes.forEach(b=>b.addEventListener('change',()=>{
+  localStorage.setItem('py_'+b.dataset.key,b.checked?'1':'0');
+  updateStats();
+}));
+document.getElementById('search').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  resources.forEach(card=>{
+    card.classList.toggle('hidden', !card.dataset.title.toLowerCase().includes(q) && !card.innerText.toLowerCase().includes(q));
+  });
+});
+function resetProgress(){
+  if(confirm('Reset all saved progress?')){
+    boxes.forEach(b=>{b.checked=false;localStorage.removeItem('py_'+b.dataset.key)});
+    updateStats();
+  }
+}
+loadProgress();
+</script>
+</body>
+</html>
