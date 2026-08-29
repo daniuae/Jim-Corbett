@@ -11,6 +11,20 @@
 ## 📢 Weekly - Topics Day wise 
 ------------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------------------------------------------------
+## 📢 Week-3 - Topics Day wise 
+------------------------------------------------------------------------------------------------------------------------
+
+### 🗓️ 28-Aug-2026 — Today's Topics and Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 📚 Week-3 Day 1 | Day-1 Study Materials | [Presentation Day-1]()|
+| 📚 Week-3 Day 1 | Day-1 Labs  | [Labs Day-1]()|
+| 📚 Week-3 Day 1 | Question | [Sample Question]()|
+| 📚 For Refreshers - Basic - Intermediate - Advance | SQL Tutorial | [SQL Video Tutorials]()|
+
+------------------------------------------------------------------------------------------------------------------------
 ### 🗓️ 28-Aug-2026 — Today's Topics and Tasks
 
 | Resource | Description | Link |
