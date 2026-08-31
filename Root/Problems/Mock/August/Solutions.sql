@@ -45,7 +45,24 @@ FROM
 ) AS ExpenseData
 ORDER BY month_start DESC;
 
+# Logic
+   --------------------------------------------
+SQL logically processes it approximately like this:
 
+1. FROM Orders
+       ↓
+2. WHERE status = 'Completed'
+       ↓
+3. GROUP BY customer_id
+       ↓
+4. HAVING SUM(amount) > 10000
+       ↓
+5. SELECT customer_id, SUM(amount)
+       ↓
+6. ORDER BY total_sales DESC
+       ↓
+7. LIMIT 5
+--------------------------------------------
 # 4. Employees & Training — JOIN + Filtering
 
 SELECT
