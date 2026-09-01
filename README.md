@@ -18,7 +18,7 @@ Links For References:
 
 | Resource | Description | Link |
 |---|---|---|
-| 📚 References | Python | [Python Project Demo Link]([https://github.com/daniuae/python](https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo)|
+| 📚 References | Python | [Python Project Demo Link](https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo)|
 | 📚 References | Python | [Python Project Demo Link](https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7)|
 | 📚 Learnlytics Evaluation  | Python | [Learnlytics Evaluation](evals.learnlytica.us)|
 | 📚 All About Python  | Python | [All About Python](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Python/All_About_Python.md)|
