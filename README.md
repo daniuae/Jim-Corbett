@@ -14,18 +14,20 @@ Links For References:
 ------------------------------------------------------------------------------------------------------------------------
 ## 📢 Week-3 - Topics Day wise 
 ------------------------------------------------------------------------------------------------------------------------
+--> Demo References  https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo
+--> Demo References  https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7
+--> evals.learnlytica.us
 
 ### 🗓️ 01-Aug-2026 — Today's Topics and Tasks
 
 | Resource | Description | Link |
 |---|---|---|
-| 📚 Week-3 Day 1 | Day-1 Study Materials | [Presentation Day-1]()|
-| 📚 Week-3 Day 1 | Day-1 Labs  | [Labs Day-1]()|
+| 📚 Week-3 Day 1 | Day-1 Study Materials | [Presentation Day-1](https://github.com/daniuae/python)|
+| 📚 Week-3 Day 1 | Day-1 Labs  | [Labs Day-1](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Python)|
 | 📚 Week-3 Day 1 | Question | [Sample Question]()|
 | 📚 For Refreshers - Basic - Intermediate - Advance | SQL Tutorial | [SQL Video Tutorials]()|
 
-Demo References  https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo
-Demo References  https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7
+
 ------------------------------------------------------------------------------------------------------------------------
 ### 🗓️ 28-Aug-2026 — Today's Topics and Tasks
 
