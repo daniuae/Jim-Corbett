@@ -19,9 +19,11 @@ Links For References:
 | Resource | Description | Link |
 |---|---|---|
 | 📚 References | Python | [Python Project Link]([https://github.com/daniuae/python](https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo)|
-| 📚 References | Python | [Python Project Link]([https://github.com/daniuae/python]([https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo](https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7)|
-| 📚 Learnlytics Evaluation  | Python | [Python Project Link]([https://github.com/daniuae/python]([https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo](evals.learnlytica.us)|
-| 📚 Learnlytics Evaluation  | Python | [Python Project Link](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Python/All_About_Python.md)|
+| 📚 References | Python | [Python Project Link](https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7)|
+| 📚 Learnlytics Evaluation  | Python | [Python Project Link](evals.learnlytica.us)|
+| 📚 All About Python  | Python | [Python Project Link](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Python/All_About_Python.md)|
+| 📚 Quiz Master  | Python | [Python Project Link](https://ahaslides.com)|
+
 
 
 ### 🗓️ 01-Sep-2026 — Today's Topics and Tasks
