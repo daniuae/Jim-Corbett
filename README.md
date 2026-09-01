@@ -14,9 +14,13 @@ Links For References:
 ------------------------------------------------------------------------------------------------------------------------
 ## 📢 Week-3 - Topics Day wise 
 ------------------------------------------------------------------------------------------------------------------------
---> Demo References  https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo
---> Demo References  https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7
---> evals.learnlytica.us
+### 🗓️ References 
+
+| Resource | Description | Link |
+|---|---|---|
+| 📚 References | Python | [Python Project Link]([https://github.com/daniuae/python](https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo)|
+| 📚 References | Python | [Python Project Link]([https://github.com/daniuae/python]([https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo](https://gamma.app/docs/Simplified-Renewable-Energy-Pipeline-o03ur3f6mx8h5u7)|
+| 📚 Learnlytics Evaluation  | Python | [Python Project Link]([https://github.com/daniuae/python]([https://gamma.app/docs/Crop-Yield-ETL-Pipeline-eug3o8awf1naymo](evals.learnlytica.us)|
 
 ### 🗓️ 01-Aug-2026 — Today's Topics and Tasks
 
