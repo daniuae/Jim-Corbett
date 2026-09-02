@@ -9,11 +9,9 @@
 > **Trainer:** Dani Krishnamurthi
 ------------------------------------------------------------------------------------------------------------------------
 ## 📢 Survey Today 2-Sep-2026
-<marquee behavior="scroll" direction="left">
 
-🐅🔥 **WELCOME TO TEAM TIGERSTACK! — CODE • DATA • ROAR!** 🔥🐅
+🐅[🔥 **WELCOME TO TEAM TIGERSTACK! — CODE • DATA • ROAR!** 🔥](https://s.surveyplanet.com/znka38zr)🐅
 
-</marquee>
 ------------------------------------------------------------------------------------------------------------------------
 Links For References:
 ------------------------------------------------------------------------------------------------------------------------
