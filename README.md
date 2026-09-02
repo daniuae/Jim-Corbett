@@ -33,6 +33,8 @@ Links For References:
 | 📚 Week-3 Day 3 | ILS Labs  | [ILS Labs](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3/ILS)|
 | 📚 Week-3 Day 3 | Problems | [Problems - Question](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3/Problems)|
 | 📚 Week-3 Day 3 | Study Materials and Presentations | [Python Tutorials](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3)|
+| 📚 Week-3 Day 3 | Pandas Problems | [Python Tutorials](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Problems/Pandas)|
+
 
 ### 🗓️ 01-Sep-2026 — Today's Topics and Tasks
 
