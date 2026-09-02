@@ -877,3 +877,10 @@ IMPROVE
 **SQL is not just a language to query data.**  
 **It is a way of thinking about data.**
 
+
+# You tube Links:
+
+https://youtu.be/hlGoQC332VM
+
+https://youtu.be/7S_tz1z_5bA
+
