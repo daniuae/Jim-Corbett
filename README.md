@@ -25,6 +25,14 @@ Links For References:
 | 📚 Quiz Master  | Python | [ahaslides.com](https://ahaslides.com)|
 
 
+### 🗓️ 02-Sep-2026 — Today's Topics and Tasks
+
+| Resource | Description | Link |
+|---|---|---|
+| 📚 Week-3 Day 3 | COD| [COD](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3/COD)|
+| 📚 Week-3 Day 3 | ILS Labs  | [ILS Labs](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3/ILS)|
+| 📚 Week-3 Day 3 | Problems | [Problems - Question](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3/Problems)|
+| 📚 Week-3 Day 3 | Study Materials and Presentations | [Python Tutorials](https://github.com/daniuae/Jim-Corbett/tree/main/Root/Week-3/Day-3)|
 
 ### 🗓️ 01-Sep-2026 — Today's Topics and Tasks
 
