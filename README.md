@@ -12,6 +12,19 @@
 
 🐅[🔥 **WELCOME TO TEAM DATATIGERS! — CODE • DATA • ROAR!** 🔥](https://s.surveyplanet.com/znka38zr)🐅
 
+Dash board: - https://trello.com
+
+1. Revision
+2. Todays Topics
+3. Demo SQL ( Team and Individual) - > 
+4. Practice + ILS + LABS
+5. Quiz and Events
+6. Fantastic Friday
+7. Trellio
+8. Results and Retro
+9. Santa Gifts -> Adds to the points
+10. Price Distribution 
+
 ------------------------------------------------------------------------------------------------------------------------
 Links For References:
 ------------------------------------------------------------------------------------------------------------------------
