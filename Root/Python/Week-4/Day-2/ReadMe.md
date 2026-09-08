@@ -1,6 +1,3 @@
-# For Gamified Python 
-### https://www.codedex.io/python
-
 # Sequence of study 
 
 1. https://www.w3schools.com/python/numpy/numpy_intro.asp
