@@ -1,4 +1,4 @@
-# **Q330 – Library Lending Analyzer**
+# **  – Library Lending Analyzer**
 
 ## **Class**
 
