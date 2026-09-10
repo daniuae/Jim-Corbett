@@ -4,6 +4,14 @@
 
 The profile currently reports **50 repositories**. The index below covers all 50 repositories visible in the public repository listing. Summaries are concise navigation-oriented summaries based on the repository landing pages, README content surfaced by GitHub, and visible folder/file structure. Very large binary files, archives, and deeply nested content are not reproduced here.
 
+
+## Repository Index
+
+| S.No. | Topic | Description | Link | Summary Lookup |
+|---:|---|---|---|---|
+| 1 | Training /  Python | Central training dashboard for the Jim Corbett batch, combining day-wise training, labs, problems, milestones, Python references, surveys and learning paths. | [Open](<[https://github.com/daniuae/Jim-Corbett](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Python/Pandas/Pandas_Brackets.md)>) | [#1](#[repo-1-jim-corbett](https://github.com/daniuae/Jim-Corbett/blob/main/Root/Python/Pandas/Pandas_Brackets.md)) |
+
+
 ## Repository Index
 
 | S.No. | Topic | Description | Link | Summary Lookup |
